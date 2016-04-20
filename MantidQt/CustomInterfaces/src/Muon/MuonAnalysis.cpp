@@ -2237,8 +2237,8 @@ void MuonAnalysis::loadFittings() {
   m_fitDataHelper = Mantid::Kernel::make_unique<MuonAnalysisFitDataHelper>(
       m_uiForm.fitBrowser, m_dataSelector);
   // Connect signals
-  connect(m_dataSelector, SIGNAL(workspacePropertiesChanged()), this,
-          SLOT(dataWorkspaceChanged()));
+  connect(m_dataSelector, SIGNAL(dataPropertiesChanged()), this,
+          SLOT(dataPropsChanged()));
   connect(m_dataSelector, SIGNAL(selectedGroupsChanged()), this,
           SLOT(dataGroupsChanged()));
   connect(m_dataSelector, SIGNAL(selectedPeriodsChanged()), this,
@@ -3200,12 +3200,12 @@ std::string MuonAnalysis::getSubtractedPeriods() const {
 }
 
 /**
- * Slot: workspace to fit changed in data selector widget
+ * Slot: workspace index, start or end changed in data selector widget
  * Pass this information to the fit helper
  */
-void MuonAnalysis::dataWorkspaceChanged() {
+void MuonAnalysis::dataPropsChanged() {
   if (m_fitDataHelper) {
-    m_fitDataHelper->handleWorkspacePropertiesChanged();
+    m_fitDataHelper->handleDataPropertiesChanged();
   }
 }
 
@@ -3238,6 +3238,16 @@ void MuonAnalysis::dataPeriodsChanged() {
 void MuonAnalysis::fitRangeChangedManually(double start, double end) {
   if (m_fitDataHelper) {
     m_fitDataHelper->handleXRangeChangedGraphically(start, end);
+  }
+}
+
+/**
+ * Slot: workspace to fit changed in data selector widget
+ * Pass this information to the fit helper
+ */
+void MuonAnalysis::dataWorkspaceChanged() {
+  if (m_fitDataHelper) {
+    m_fitDataHelper->handleDataWorkspaceChanged();
   }
 }
 
