@@ -98,7 +98,8 @@ bool ScreenPickerTool::eventFilter(QObject *obj, QEvent *event)
 						break;
 				}
 			}
-		default:
+                          BOOST_FALLTHROUGH;
+                default:
 			break;
 	}
 	return QwtPlotPicker::eventFilter(obj, event);
@@ -199,7 +200,8 @@ bool DrawPointTool::eventFilter(QObject *obj, QEvent *event)
 						break;
 				}
 			}
-		default:
+                          BOOST_FALLTHROUGH;
+                default:
 			break;
 	}
 	return QwtPlotPicker::eventFilter(obj, event);

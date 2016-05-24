@@ -7,7 +7,7 @@
  * $Id: vms_convert.cpp 4 2004-09-09 22:03:23Z faa59 $
  */
 #include "vms_convert.h"
-
+#include <boost/config.hpp>
 /*
  * Byte swaps for int and short
  */
@@ -293,6 +293,7 @@ static int vax_to_ieee_float(float *fp) {
       is = mmax.ieee;
       break;
     } /* else, fall thru */
+    BOOST_FALLTHROUGH;
   default:
     is.exp = vs.exp - VAX_SNG_BIAS + IEEE_SNG_BIAS;
     is.mantissa = (vs.mantissa1 << 16) | vs.mantissa2;

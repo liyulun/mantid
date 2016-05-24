@@ -1,4 +1,4 @@
-#ifdef __clang__
+#ifdef __clang
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wcast-align"
 #endif
@@ -63,6 +63,8 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 #endif
 
 #include "MantidICat/GSoap/stdsoap2.h"
+
+#include <boost/config.hpp>
 
 #if defined(__cplusplus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
 #include <iostream>
@@ -10679,6 +10681,7 @@ static int soap_getattrval(struct soap *soap, char *s, size_t n, soap_wchar d) {
         *s = '\0';
         return SOAP_OK;
       }
+      BOOST_FALLTHROUGH;
     default:
       if ((int)c == EOF)
         return soap->error = SOAP_CHK_EOF;

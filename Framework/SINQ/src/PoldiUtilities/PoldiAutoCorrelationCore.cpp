@@ -400,6 +400,7 @@ UncertainValue PoldiAutoCorrelationCore::getCMessAndCSigma(
     value = counts * 1.0 / normCounts;
     error = 1.0 / normCounts;
   }
+    BOOST_FALLTHROUGH;
   case 1: {
     value += minCounts *
              (static_cast<double>(locator.icmin) - locator.cmin + 1.0) /

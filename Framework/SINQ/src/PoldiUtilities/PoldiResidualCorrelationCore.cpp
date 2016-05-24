@@ -109,6 +109,7 @@ void PoldiResidualCorrelationCore::distributeCorrelationCounts(
           }
           addToCountData(locator.detectorElement, middleIndex, deltaForD);
         }
+          BOOST_FALLTHROUGH;
         case 1: {
           addToCountData(locator.detectorElement, locator.iicmin,
                          deltaForD * (static_cast<double>(locator.icmin) -

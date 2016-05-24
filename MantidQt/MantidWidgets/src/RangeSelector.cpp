@@ -66,6 +66,7 @@ void RangeSelector::init() {
     m_mrkMax->attach(m_plot);
     m_mrkMax->setYValue(1.0);
   case XSINGLE:
+    BOOST_FALLTHROUGH;
   case YSINGLE:
     m_mrkMin->setLineStyle(lineStyle);
     m_mrkMin->attach(m_plot);
@@ -302,6 +303,7 @@ void RangeSelector::setColour(QColor colour) {
   case XMINMAX:
   case YMINMAX:
     m_mrkMax->setLinePen(*m_pen);
+    BOOST_FALLTHROUGH;
   case XSINGLE:
   case YSINGLE:
     m_mrkMin->setLinePen(*m_pen);

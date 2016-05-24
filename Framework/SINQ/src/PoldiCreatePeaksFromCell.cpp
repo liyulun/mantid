@@ -153,7 +153,7 @@ UnitCell PoldiCreatePeaksFromCell::getConstrainedUnitCell(
       return UnitCell(unitCell.a(), unitCell.a(), unitCell.a(),
                       unitCell.alpha(), unitCell.alpha(), unitCell.alpha());
     }
-  // fall through to hexagonal.
+    BOOST_FALLTHROUGH;
   case PointGroup::CrystalSystem::Hexagonal:
     return UnitCell(unitCell.a(), unitCell.a(), unitCell.c(), 90.0, 90.0,
                     120.0);

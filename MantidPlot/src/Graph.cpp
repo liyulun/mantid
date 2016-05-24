@@ -2599,7 +2599,7 @@ bool Graph::addCurves(Table *w, const QStringList &names, int style,
       // Fall through, as we want errors to be at the end of the list in the
       // same way as labels
       // are. So _no break_ here on purpose.
-
+        BOOST_FALLTHROUGH;
       case Table::Label:
         // Keep error/label columns at the end of the list
         drawableNames.append(names[i]);

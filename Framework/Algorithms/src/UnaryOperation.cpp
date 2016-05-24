@@ -136,9 +136,7 @@ void UnaryOperation::execEvent() {
     case TOF:
       // Switch to weights if needed.
       evlist->switchTo(WEIGHTED);
-    /* no break */
-    // Fall through
-
+      BOOST_FALLTHROUGH;
     case WEIGHTED:
       unaryOperationEventHelper(evlist->getWeightedEvents());
       break;

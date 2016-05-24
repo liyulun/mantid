@@ -72,6 +72,7 @@ bool PeakPicker::eventFilter(QObject* object, QEvent* event)
       // XXX: fall through intentionally, so that the user instantly sees a new PeakPicker
       //      position when starts dragging
     }
+      BOOST_FALLTHROUGH;
     case QEvent::MouseMove:
     {
       QPoint p = static_cast<QMouseEvent*>(event)->pos();

@@ -1035,6 +1035,7 @@ void ScriptRepositoryImpl::remove(const std::string &file_path,
           "through your operative system,"
        << "using your local installation folder at " << local_repository;
     raise_exc = true;
+    break;
   default:
     break;
   }

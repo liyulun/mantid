@@ -388,8 +388,7 @@ operator+=(const std::vector<WeightedEvent> &more_events) {
   case TOF:
     // Need to switch to weighted
     this->switchTo(WEIGHTED);
-  // Fall through to the insertion!
-
+    BOOST_FALLTHROUGH;
   case WEIGHTED:
     // Append the two lists
     this->weightedEvents.insert(weightedEvents.end(), more_events.begin(),
@@ -426,8 +425,7 @@ operator+=(const std::vector<WeightedEventNoTime> &more_events) {
   case WEIGHTED:
     // Need to switch to weighted with no time
     this->switchTo(WEIGHTED_NOTIME);
-  // Fall through to the insertion!
-
+    BOOST_FALLTHROUGH;
   case WEIGHTED_NOTIME:
     // Simple appending of the two lists
     this->weightedEventsNoTime.insert(weightedEventsNoTime.end(),
@@ -529,8 +527,7 @@ EventList &EventList::operator-=(const EventList &more_events) {
   switch (this->getEventType()) {
   case TOF:
     this->switchTo(WEIGHTED);
-  // Fall through
-
+    BOOST_FALLTHROUGH;
   case WEIGHTED:
     switch (more_events.getEventType()) {
     case TOF:
@@ -3342,8 +3339,7 @@ void EventList::multiply(const double value, const double error) {
   case TOF:
     // Switch to weights if needed.
     this->switchTo(WEIGHTED);
-  // Fall through
-
+    BOOST_FALLTHROUGH;
   case WEIGHTED:
     multiplyHelper(this->weightedEvents, value, error);
     break;
@@ -3461,8 +3457,7 @@ void EventList::multiply(const MantidVec &X, const MantidVec &Y,
   case TOF:
     // Switch to weights if needed.
     this->switchTo(WEIGHTED);
-  // Fall through
-
+    BOOST_FALLTHROUGH;
   case WEIGHTED:
     // Sorting by tof is necessary for the algorithm
     this->sortTof();
@@ -3598,8 +3593,7 @@ void EventList::divide(const MantidVec &X, const MantidVec &Y,
   case TOF:
     // Switch to weights if needed.
     this->switchTo(WEIGHTED);
-  // Fall through
-
+    BOOST_FALLTHROUGH;
   case WEIGHTED:
     // Sorting by tof is necessary for the algorithm
     this->sortTof();

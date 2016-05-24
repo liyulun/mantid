@@ -450,7 +450,7 @@ void He3TubeEfficiency::execEvent() {
     case API::TOF:
       // Switch to weights if needed.
       evlist->switchTo(API::WEIGHTED);
-    // Fall through
+      BOOST_FALLTHROUGH;
     case API::WEIGHTED:
       eventHelper(evlist->getWeightedEvents(), exp_constant);
       break;

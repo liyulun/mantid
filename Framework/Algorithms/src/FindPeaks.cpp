@@ -484,8 +484,7 @@ void FindPeaks::findPeaksUsingMariscotti() {
         switch (M) {
         case 3:
           i3 = i;
-        /* no break */
-        // intentional fall-through
+          BOOST_FALLTHROUGH;
         case 2:
           i2 = i - 1;
           break;

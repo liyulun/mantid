@@ -177,7 +177,7 @@ bool DataPickerTool::eventFilter(QObject *obj, QEvent *event)
         d_move_mode = Free;
       break;
     }
-
+    break;
   default:
     break;
   }

@@ -277,9 +277,7 @@ void CorrectKiKf::execEvent() {
     case TOF:
       // Switch to weights if needed.
       evlist->switchTo(WEIGHTED);
-    /* no break */
-    // Fall through
-
+      BOOST_FALLTHROUGH;
     case WEIGHTED:
       correctKiKfEventHelper(evlist->getWeightedEvents(), efixed, emodeStr);
       break;
