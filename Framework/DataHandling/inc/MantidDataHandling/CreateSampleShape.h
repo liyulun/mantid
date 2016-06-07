@@ -51,6 +51,8 @@ public:
   int version() const override { return (1); }
   /// Algorithm's category for identification
   const std::string category() const override { return "Sample;"; }
+  /// Algorithm's aliases
+  const std::string alias() const override { return "SetSampleShape"; }
 
 private:
   /// Initialisation code
