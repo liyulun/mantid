@@ -234,7 +234,15 @@ public:
   /**
   Getter for the masking at a specified linear index.
   */
-  bool getIsMaskedAt(size_t index) const { return m_masks[index]; }
+  bool getIsMaskedAt(size_t index) const {
+    if (index >= m_length) {
+      std::string tmp = "index " + std::to_string(index) +
+                        " is larger than m_length " + std::to_string(m_length) +
+                        "!";
+      throw std::out_of_range(tmp);
+    }
+    return m_masks[index];
+  }
 
   /// Get the signal at the specified index.
   signal_t getSignalAt(size_t index) const override { return m_signals[index]; }
