@@ -262,6 +262,12 @@ size_t MDHistoWorkspaceIterator::getDataSize() const {
  * @param index :: point to jump to. Must be 0 <= index < getDataSize().
  */
 void MDHistoWorkspaceIterator::jumpTo(size_t index) {
+  if (index >= getDataSize()) {
+    std::string tmp = "index " + std::to_string(index) +
+                      " is larger than m_length " +
+                      std::to_string(getDataSize()) + "!";
+    throw std::out_of_range(tmp);
+  }
   m_pos = uint64_t(index + m_begin);
 }
 
@@ -277,14 +283,16 @@ MDHistoWorkspaceIterator::jumpToNearest(const VMD &fromLocation) {
   coord_t sqDiff = 0;
   for (size_t d = 0; d < m_nd; ++d) {
     coord_t dExact = getDExact(fromLocation[d], m_origin[d], m_binWidth[d]);
-    size_t dRound = std::lround(dExact); // Round to nearest bin edge.
+    size_t dRound =
+        std::max(long{0}, std::lround(dExact)); // Round to nearest bin edge.
     sqDiff += (dExact - coord_t(dRound)) * (dExact - coord_t(dRound)) *
               m_binWidth[d] * m_binWidth[d];
     indexes[d] = dRound;
   }
 
-  const size_t linearIndex =
+  size_t linearIndex =
       Utils::NestedForLoop::GetLinearIndex(m_nd, &indexes[0], m_indexMaker);
+  linearIndex = std::min(getDataSize() - 1, linearIndex);
   this->jumpTo(linearIndex);
   return std::sqrt(sqDiff);
 }

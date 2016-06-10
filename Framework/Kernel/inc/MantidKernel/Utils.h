@@ -3,6 +3,7 @@
 
 #include "MantidKernel/DllConfig.h"
 #include <cmath>
+#include <iostream>
 #include <vector>
 
 namespace Mantid {
@@ -125,6 +126,8 @@ inline size_t GetLinearIndex(const size_t numDims, size_t *index,
   size_t out = 0;
   for (size_t d = 0; d < numDims; d++)
     out += index[d] * index_maker[d];
+
+  std::cout << "linear index: " << out << '\n';
   return out;
 }
 

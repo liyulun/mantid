@@ -1237,7 +1237,7 @@ public:
     itIn->next();
     TS_ASSERT_EQUALS(itIn->getLinearIndex(), 3);
     diff = itOut->jumpToNearest(itIn->getCenter());
-    TS_ASSERT_EQUALS(itOut->getLinearIndex(), 3); // 10.5 closer to 12 than 8
+    TS_ASSERT_EQUALS(itOut->getLinearIndex(), 2); // 10.5 closer to 12 than 8
     TS_ASSERT_DELTA(1.5, diff, 1e-4);
 
     delete itIn;
