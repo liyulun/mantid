@@ -212,10 +212,10 @@ void LoadAscii2::writeToWorkspace(API::MatrixWorkspace_sptr &localWorkspace,
     }
     if (m_spectrumIDcount != 0) {
       localWorkspace->getSpectrum(i)
-          ->setSpectrumNo(m_spectra[i].getSpectrumNo());
+          .setSpectrumNo(m_spectra[i].getSpectrumNo());
     } else {
       localWorkspace->getSpectrum(i)
-          ->setSpectrumNo(static_cast<specnum_t>(i) + 1);
+          .setSpectrumNo(static_cast<specnum_t>(i) + 1);
     }
   }
 }
@@ -673,7 +673,7 @@ void LoadAscii2::exec() {
   if (sep.empty()) {
     g_log.notice() << "\"UserDefined\" has been selected, but no custom "
                       "separator has been entered."
-                      " Using default instead." << std::endl;
+                      " Using default instead.\n";
     sep = ",";
   }
   m_columnSep = sep;
@@ -704,7 +704,7 @@ void LoadAscii2::exec() {
     rd = readData(file);
   } catch (std::exception &e) {
     g_log.error() << "Failed to read as ASCII this file: '" << filename
-                  << ", error description: " << e.what() << std::endl;
+                  << ", error description: " << e.what() << '\n';
     throw std::runtime_error("Failed to recognize this file as an ASCII file, "
                              "cannot continue.");
   }

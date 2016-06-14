@@ -103,7 +103,7 @@ bool ISISHistoDataListener::connect(const Poco::Net::SocketAddress &address) {
   }
 
   m_numberOfPeriods = getInt("NPER");
-  g_log.information() << "Number of periods " << m_numberOfPeriods << std::endl;
+  g_log.information() << "Number of periods " << m_numberOfPeriods << '\n';
 
   // Set the spectra list to load
   std::vector<specnum_t> spectra = getProperty("SpectraList");
@@ -158,7 +158,7 @@ boost::shared_ptr<Workspace> ISISHistoDataListener::extractData() {
   if (m_timeRegime < 0) {
     m_timeRegime = getTimeRegimeToLoad();
     g_log.debug() << "Loading spectra for time regime " << m_timeRegime + 1
-                  << std::endl;
+                  << '\n';
   }
 
   if (!m_daeHandle) {
@@ -435,8 +435,7 @@ void ISISHistoDataListener::getData(int period, int index, int count,
     workspace->setX(wi, m_bins[m_timeRegime]);
     MantidVec &y = workspace->dataY(wi);
     MantidVec &e = workspace->dataE(wi);
-    workspace->getSpectrum(wi)
-        ->setSpectrumNo(index + static_cast<specnum_t>(i));
+    workspace->getSpectrum(wi).setSpectrumNo(index + static_cast<specnum_t>(i));
     size_t shift = i * (numberOfBins + 1) + 1;
     y.assign(dataBuffer.begin() + shift, dataBuffer.begin() + shift + y.size());
     std::transform(y.begin(), y.end(), e.begin(), dblSqrt);
@@ -554,7 +553,7 @@ void ISISHistoDataListener::loadTimeRegimes() {
         }
 
         for (auto &mon : m_monitorSpectra) {
-          g_log.information() << "Monitor spectrum " << mon << std::endl;
+          g_log.information() << "Monitor spectrum " << mon << '\n';
         }
 
         const std::string detRTCB =
@@ -575,14 +574,13 @@ void ISISHistoDataListener::loadTimeRegimes() {
       }
     }
   }
-  g_log.information() << "Number of time regimes " << m_bins.size()
-                      << std::endl;
+  g_log.information() << "Number of time regimes " << m_bins.size() << '\n';
   assert(m_numberOfBins.size() == m_numberOfSpectra.size());
   for (size_t i = 0; i < m_numberOfBins.size(); ++i) {
     g_log.information() << "Number of bins in time regime " << i + 1 << " is "
-                        << m_numberOfBins[i] << std::endl;
+                        << m_numberOfBins[i] << '\n';
     g_log.information() << "Number of spectra in time regime " << i + 1
-                        << " is " << m_numberOfSpectra[i] << std::endl;
+                        << " is " << m_numberOfSpectra[i] << '\n';
   }
 
   // find the total number of spectra in all regimes

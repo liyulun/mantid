@@ -120,7 +120,7 @@ void SofQWCentre::exec() {
 
   try {
     double l1 = source->getDistance(*sample);
-    g_log.debug() << "Source-sample distance: " << l1 << std::endl;
+    g_log.debug() << "Source-sample distance: " << l1 << '\n';
   } catch (Exception::NotFoundError &) {
     g_log.error("Unable to calculate source-sample distance");
     throw Exception::InstrumentDefinitionError(
@@ -224,7 +224,7 @@ void SofQWCentre::exec() {
 
           // Add this spectra-detector pair to the mapping
           specNumberMapping.push_back(
-              outputWorkspace->getSpectrum(qIndex)->getSpectrumNo());
+              outputWorkspace->getSpectrum(qIndex).getSpectrumNo());
           detIDMapping.push_back(det->getID());
 
           // And add the data and it's error to that bin, taking into account

@@ -375,7 +375,7 @@ void He3TubeEfficiency::logErrors() const {
     for (size_t i = 0; i < nspecs; ++i) {
       this->g_log.debug() << this->spectraSkipped[i] << " ";
     }
-    this->g_log.debug() << std::endl;
+    this->g_log.debug() << '\n';
   }
 }
 
@@ -445,17 +445,17 @@ void He3TubeEfficiency::execEvent() {
     }
 
     // Do the correction
-    DataObjects::EventList *evlist = outputWS->getEventListPtr(i);
-    switch (evlist->getEventType()) {
+    auto &evlist = outputWS->getSpectrum(i);
+    switch (evlist.getEventType()) {
     case API::TOF:
       // Switch to weights if needed.
-      evlist->switchTo(API::WEIGHTED);
+      evlist.switchTo(API::WEIGHTED);
     // Fall through
     case API::WEIGHTED:
-      eventHelper(evlist->getWeightedEvents(), exp_constant);
+      eventHelper(evlist.getWeightedEvents(), exp_constant);
       break;
     case API::WEIGHTED_NOTIME:
-      eventHelper(evlist->getWeightedEventsNoTime(), exp_constant);
+      eventHelper(evlist.getWeightedEventsNoTime(), exp_constant);
       break;
     }
 

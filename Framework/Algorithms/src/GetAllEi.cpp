@@ -237,8 +237,8 @@ void GetAllEi::exec() {
   auto lastChopper = pInstrument->getChopperPoint(nChoppers-1);
   ///<---------------------------------------------------
   */
-  auto baseSpectrum = inputWS->getSpectrum(det1WSIndex);
-  std::pair<double, double> TOF_range = baseSpectrum->getXDataRange();
+  auto &baseSpectrum = inputWS->getSpectrum(det1WSIndex);
+  std::pair<double, double> TOF_range = baseSpectrum.getXDataRange();
 
   double Period =
       (0.5 * 1.e+6) / chopSpeed; // 0.5 because some choppers open twice.
@@ -262,9 +262,9 @@ void GetAllEi::exec() {
     printDebugModeInfo(guess_opening, TOF_range, destUnit);
   }
   std::pair<double, double> Mon1_Erange =
-      monitorWS->getSpectrum(0)->getXDataRange();
+      monitorWS->getSpectrum(0).getXDataRange();
   std::pair<double, double> Mon2_Erange =
-      monitorWS->getSpectrum(1)->getXDataRange();
+      monitorWS->getSpectrum(1).getXDataRange();
   double eMin = std::max(Mon1_Erange.first, Mon2_Erange.first);
   double eMax = std::min(Mon1_Erange.second, Mon2_Erange.second);
   g_log.debug() << boost::str(
@@ -291,7 +291,7 @@ void GetAllEi::exec() {
   for (double ei : guess_ei) {
     g_log.debug() << boost::str(boost::format(" %8.2f; ") % ei);
   }
-  g_log.debug() << std::endl;
+  g_log.debug() << '\n';
 
   std::sort(guess_ei.begin(), guess_ei.end());
 
@@ -403,18 +403,18 @@ void GetAllEi::printDebugModeInfo(const std::vector<double> &guess_opening,
 
   g_log.debug() << "*Found : " << guess_opening.size()
                 << " chopper prospective opening within time frame: "
-                << TOF_range.first << " to: " << TOF_range.second << std::endl;
+                << TOF_range.first << " to: " << TOF_range.second << '\n';
   g_log.debug() << " Timings are:\n";
   for (double time : guess_opening) {
     g_log.debug() << boost::str(boost::format(" %8.2f; ") % time);
   }
-  g_log.debug() << std::endl;
+  g_log.debug() << '\n';
   g_log.debug() << " Corresponding to energies:\n";
   for (double time : guess_opening) {
     double ei = destUnit->singleFromTOF(time);
     g_log.debug() << boost::str(boost::format(" %8.2f; ") % ei);
   }
-  g_log.debug() << std::endl;
+  g_log.debug() << '\n';
 }
 
 // unnamed namespace for auxiliary file-based functions, converted from lambda
@@ -561,8 +561,7 @@ bool GetAllEi::peakGuess(const API::MatrixWorkspace_sptr &inputWS, size_t index,
                                " smoothing iterations at still_count: " +
                                std::to_string(stay_still_count) +
                                " Wrong energy or noisy peak at Ei=" +
-                               boost::lexical_cast<std::string>(Ei)
-                        << std::endl;
+                               boost::lexical_cast<std::string>(Ei) << '\n';
   }
   g_log.debug() << "*Performed: " + std::to_string(ic) +
                        " averages for spectra " + std::to_string(index) +
@@ -630,7 +629,7 @@ bool GetAllEi::findMonitorPeak(const API::MatrixWorkspace_sptr &inputWS,
                          boost::lexical_cast<std::string>(peak1Height) +
                          " and 2*Sigma: " +
                          boost::lexical_cast<std::string>(peak1TwoSigma)
-                  << std::endl;
+                  << '\n';
     return false;
   }
 
@@ -656,7 +655,7 @@ bool GetAllEi::findMonitorPeak(const API::MatrixWorkspace_sptr &inputWS,
                  boost::lexical_cast<std::string>(peak1TwoSigma) +
                  "\n and Peak at mon2: Ei= " +
                  boost::lexical_cast<std::string>(peak2Pos) + "and height: " +
-                 boost::lexical_cast<std::string>(peak1Height) << std::endl;
+                 boost::lexical_cast<std::string>(peak1Height) << '\n';
 
       return false;
     }
@@ -878,11 +877,11 @@ GetAllEi::buildWorkspaceToFit(const API::MatrixWorkspace_sptr &inputWS,
   wsIndex0 = inputWS->getIndexFromSpectrumNumber(specNum1);
   specnum_t specNum2 = getProperty("Monitor2SpecID");
   size_t wsIndex1 = inputWS->getIndexFromSpectrumNumber(specNum2);
-  auto pSpectr1 = inputWS->getSpectrum(wsIndex0);
-  auto pSpectr2 = inputWS->getSpectrum(wsIndex1);
+  auto &pSpectr1 = inputWS->getSpectrum(wsIndex0);
+  auto &pSpectr2 = inputWS->getSpectrum(wsIndex1);
   // assuming equally binned ws.
   // auto bins       = inputWS->dataX(wsIndex0);
-  auto bins = pSpectr1->dataX();
+  auto bins = pSpectr1.dataX();
   size_t XLength = bins.size();
   size_t YLength = inputWS->dataY(wsIndex0).size();
   auto working_ws =
@@ -906,14 +905,14 @@ GetAllEi::buildWorkspaceToFit(const API::MatrixWorkspace_sptr &inputWS,
     Error2[i] = inputWS->dataE(wsIndex1)[i];
   }
   // copy detector mapping
-  API::ISpectrum *spectrum = working_ws->getSpectrum(0);
-  spectrum->setSpectrumNo(specNum1);
-  spectrum->clearDetectorIDs();
-  spectrum->addDetectorIDs(pSpectr1->getDetectorIDs());
-  spectrum = working_ws->getSpectrum(1);
-  spectrum->setSpectrumNo(specNum2);
-  spectrum->clearDetectorIDs();
-  spectrum->addDetectorIDs(pSpectr2->getDetectorIDs());
+  auto &spectrum1 = working_ws->getSpectrum(0);
+  spectrum1.setSpectrumNo(specNum1);
+  spectrum1.clearDetectorIDs();
+  spectrum1.addDetectorIDs(pSpectr1.getDetectorIDs());
+  auto &spectrum2 = working_ws->getSpectrum(1);
+  spectrum2.setSpectrumNo(specNum2);
+  spectrum2.clearDetectorIDs();
+  spectrum2.addDetectorIDs(pSpectr2.getDetectorIDs());
 
   if (inputWS->getAxis(0)->unit()->caption() != "Energy") {
     API::IAlgorithm_sptr conv = createChildAlgorithm("ConvertUnits");
