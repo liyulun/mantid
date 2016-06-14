@@ -181,13 +181,15 @@ AlgorithmHistory_sptr AlgorithmHistory::operator[](const size_t index) const {
 */
 const std::string &
 AlgorithmHistory::getPropertyValue(const std::string &name) const {
-  for (auto &hist : m_properties) {
-    if (hist->name() == name) {
-      return hist->value();
-    }
+  auto result = std::find_if(m_properties.cbegin(), m_properties.cend(),
+                             [&name](const AlgorithmHistory_sptr &hist) {
+                               return hist->name() == name;
+                             });
+  if (result == m_properties.cend()) {
+    throw Kernel::Exception::NotFoundError(
+        "Could not find the specified property", name);
   }
-  throw Kernel::Exception::NotFoundError(
-      "Could not find the specified property", name);
+  return (*result)->value();
 }
 
 /**
