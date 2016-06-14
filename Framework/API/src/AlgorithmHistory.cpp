@@ -182,7 +182,7 @@ AlgorithmHistory_sptr AlgorithmHistory::operator[](const size_t index) const {
 const std::string &
 AlgorithmHistory::getPropertyValue(const std::string &name) const {
   auto result = std::find_if(m_properties.cbegin(), m_properties.cend(),
-                             [&name](const AlgorithmHistory_sptr &hist) {
+                             [&name](const PropertyHistory_sptr &hist) {
                                return hist->name() == name;
                              });
   if (result == m_properties.cend()) {
