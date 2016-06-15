@@ -11,15 +11,15 @@
 #include "MantidKernel/OptionalBool.h"
 
 #ifndef Q_MOC_RUN
+#include <boost/algorithm/string/trim.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/algorithm/string/trim.hpp>
 #endif
 
-#include <MantidKernel/StringTokenizer.h>
-#include <vector>
-#include <type_traits>
 #include "MantidKernel/IPropertySettings.h"
+#include <MantidKernel/StringTokenizer.h>
+#include <type_traits>
+#include <vector>
 
 namespace Mantid {
 

@@ -4,12 +4,12 @@
 //----------------------------------------------------------------------
 // Includes
 //----------------------------------------------------------------------
-#include "MantidKernel/EmptyValues.h"
+#include "MantidKernel/PropertyHistory.h"
 #include <string>
 #include <vector>
 #ifndef Q_MOC_RUN
-#include <boost/shared_ptr.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/shared_ptr.hpp>
 #endif
 namespace Mantid {
 namespace Kernel {

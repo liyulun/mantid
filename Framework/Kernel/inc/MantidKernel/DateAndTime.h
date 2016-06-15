@@ -5,7 +5,7 @@
 #ifndef Q_MOC_RUN
 #include <boost/date_time/posix_time/posix_time.hpp>
 #endif
-#include <iosfwd>
+#include "MantidKernel/ITimeSeriesProperty.h"
 
 namespace Mantid {
 namespace Kernel {

@@ -4,9 +4,9 @@
 //----------------------------------------------------------------------
 // Includes
 //----------------------------------------------------------------------
-#include <stdexcept>
-#include <string>
-#include "MantidKernel/DllConfig.h"
+#include "MantidKernel/Exception.h"
+#include "MantidKernel/Property.h"
+#include "MantidKernel/RegistrationHelper.h"
 
 namespace Mantid {
 namespace Kernel {

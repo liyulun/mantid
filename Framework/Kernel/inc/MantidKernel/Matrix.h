@@ -2,9 +2,9 @@
 #define MANTID_KERNEL_MATRIX_H_
 
 #include "MantidKernel/DllConfig.h"
-#include <vector>
 #include <cfloat>
 #include <ostream>
+#include <vector>
 
 namespace Mantid {
 

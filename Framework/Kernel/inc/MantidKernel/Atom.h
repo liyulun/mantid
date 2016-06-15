@@ -1,10 +1,10 @@
 #ifndef ATOM_H_
 #define ATOM_H_
 
-#include <ostream>
-#include <string>
 #include "MantidKernel/DllConfig.h"
 #include "MantidKernel/NeutronAtom.h"
+#include <ostream>
+#include <string>
 
 namespace Mantid {
 namespace PhysicalConstants {

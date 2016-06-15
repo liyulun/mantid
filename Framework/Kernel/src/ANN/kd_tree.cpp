@@ -29,9 +29,9 @@
 //----------------------------------------------------------------------
 
 #include "kd_tree.h"                  // kd-tree declarations
+#include "MantidKernel/ANN/ANNperf.h" // performance evaluation
 #include "kd_split.h"                 // kd-tree splitting rules
 #include "kd_util.h"                  // kd-tree utilities
-#include "MantidKernel/ANN/ANNperf.h" // performance evaluation
 
 //----------------------------------------------------------------------
 //	Global data

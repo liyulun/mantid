@@ -2,11 +2,11 @@
 #include "MantidKernel/ChecksumHelper.h"
 #include "MantidKernel/ConfigService.h"
 #include "MantidKernel/DateAndTime.h"
-#include "MantidKernel/Exception.h"
 #include "MantidKernel/InternetHelper.h"
-#include "MantidKernel/MantidVersion.h"
 #include "MantidKernel/Logger.h"
+#include "MantidKernel/MantidVersion.h"
 #include "MantidKernel/ParaViewVersion.h"
+#include <vector>
 
 #include <Poco/ActiveResult.h>
 

@@ -4,7 +4,7 @@
 //----------------------------------------------------------------------
 // Includes
 //----------------------------------------------------------------------
-#include "MantidKernel/DllConfig.h"
+#include "MantidKernel/MantidVersion.h"
 
 #include <string>
 

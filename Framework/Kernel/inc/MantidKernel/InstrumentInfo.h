@@ -5,9 +5,9 @@
 // Includes
 //----------------------------------------------------------------------
 #include "MantidKernel/DllConfig.h"
-#include <set>
-#include <string>
+#include "MantidKernel/RemoteJobManager.h"
 #include <map>
+#include <set>
 
 //----------------------------------------------------------------------
 // Forward declarations

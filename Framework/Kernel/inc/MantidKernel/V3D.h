@@ -1,13 +1,13 @@
 #ifndef MANTID_KERNEL_V3D_H_
 #define MANTID_KERNEL_V3D_H_
 
-#include <cmath>
-#include <cfloat>
-#include <complex>
-#include <vector>
 #include "MantidKernel/DllConfig.h"
 #include "MantidKernel/Matrix.h"
+#include <cfloat>
+#include <cmath>
+#include <complex>
 #include <nexus/NeXusFile.hpp>
+#include <vector>
 
 namespace Mantid {
 namespace Kernel {

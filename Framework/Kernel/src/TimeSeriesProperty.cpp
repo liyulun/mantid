@@ -5,7 +5,7 @@
 #include "MantidKernel/TimeSplitter.h"
 #include "MantidKernel/make_unique.h"
 
-#include <boost/regex.hpp>
+#include <utility>
 
 using namespace std;
 

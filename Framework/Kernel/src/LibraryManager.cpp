@@ -1,9 +1,9 @@
 
-#include "MantidKernel/ConfigService.h"
-#include "MantidKernel/DllOpen.h"
 #include "MantidKernel/LibraryManager.h"
+#include "MantidKernel/ConfigService.h"
+#include "MantidKernel/DllConfig.h"
+#include "MantidKernel/DllOpen.h"
 #include "MantidKernel/LibraryWrapper.h"
-#include "MantidKernel/Logger.h"
 
 #include <Poco/Path.h>
 #include <Poco/File.h>

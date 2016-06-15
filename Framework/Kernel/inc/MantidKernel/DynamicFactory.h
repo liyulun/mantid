@@ -5,9 +5,9 @@
 // Includes
 //----------------------------------------------------------------------
 #include "MantidKernel/DllConfig.h"
-#include "MantidKernel/Instantiator.h"
 #include "MantidKernel/Exception.h"
-#include "MantidKernel/RegistrationHelper.h"
+#include "MantidKernel/Instantiator.h"
+#include <stdexcept>
 
 // Boost
 #ifndef Q_MOC_RUN
@@ -20,11 +20,11 @@
 #include <Poco/AutoPtr.h>
 
 // std
+#include "MantidKernel/SingletonHolder.h"
 #include <cstring>
 #include <functional>
 #include <iterator>
 #include <map>
-#include <vector>
 
 namespace Mantid {
 namespace Kernel {

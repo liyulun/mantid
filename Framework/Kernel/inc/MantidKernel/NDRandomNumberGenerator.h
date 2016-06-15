@@ -4,8 +4,8 @@
 //------------------------------------------------------------------------------
 // Includes
 //------------------------------------------------------------------------------
-#include "DllConfig.h"
 #include "ClassMacros.h"
+#include "DllConfig.h"
 #include <vector>
 
 namespace Mantid {

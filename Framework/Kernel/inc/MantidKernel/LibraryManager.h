@@ -4,14 +4,14 @@
 //----------------------------------------------------------------------
 // Includes
 //----------------------------------------------------------------------
-#include <string>
 #include <map>
+#include <string>
 #ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
 #endif
 
-#include "MantidKernel/SingletonHolder.h"
 #include "MantidKernel/DllConfig.h"
+#include "MantidKernel/SingletonHolder.h"
 
 namespace Mantid {
 namespace Kernel {

@@ -31,8 +31,8 @@
 // desired.)
 //----------------------------------------------------------------------
 
-#include "kd_tree.h" // kd-tree declarations
 #include "bd_tree.h" // bd-tree declarations
+#include "kd_tree.h" // kd-tree declarations
 
 #include <limits>
 

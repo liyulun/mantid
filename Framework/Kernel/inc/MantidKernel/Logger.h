@@ -4,7 +4,7 @@
 //----------------------------------------------------------------------
 // Includes
 //----------------------------------------------------------------------
-#include "MantidKernel/DllConfig.h"
+#include "MantidKernel/Logger.h"
 
 #include <Poco/Message.h>
 

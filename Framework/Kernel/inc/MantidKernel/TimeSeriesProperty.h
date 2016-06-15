@@ -4,11 +4,11 @@
 //----------------------------------------------------------------------
 // Includes
 //----------------------------------------------------------------------
-#include "MantidKernel/DllConfig.h"
 #include "MantidKernel/DateAndTime.h"
-#include "MantidKernel/ITimeSeriesProperty.h"
+#include "MantidKernel/DllConfig.h"
 #include "MantidKernel/Property.h"
 #include "MantidKernel/Statistics.h"
+#include <iosfwd>
 #include <utility>
 
 namespace Mantid {

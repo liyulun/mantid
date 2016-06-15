@@ -5,8 +5,8 @@
 //------------------------------------------------------------------------------
 #include "MantidKernel/DllConfig.h"
 
-#include <cstdint>
 #include <cfloat>
+#include <cstdint>
 #include <iosfwd>
 #include <string>
 #include <vector>

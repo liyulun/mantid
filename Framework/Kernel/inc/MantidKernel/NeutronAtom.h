@@ -4,9 +4,9 @@
 //------------------------------------------------------------------------------
 // Include
 //------------------------------------------------------------------------------
+#include "MantidKernel/DllConfig.h"
 #include <ostream>
 #include <string>
-#include "MantidKernel/DllConfig.h"
 
 namespace Mantid {
 namespace PhysicalConstants {

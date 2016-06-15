@@ -1,9 +1,9 @@
 #ifndef MANTID_KERNEL_InternetHelper_H_
 #define MANTID_KERNEL_InternetHelper_H_
 
-#include "MantidKernel/System.h"
 #include "MantidKernel/DllConfig.h"
 #include "MantidKernel/ProxyInfo.h"
+#include "MantidKernel/System.h"
 
 #include <ios>
 #include <map>

@@ -1,10 +1,10 @@
 #ifndef REMOTEJOBMANAGER_H
 #define REMOTEJOBMANAGER_H
 
+#include <iosfwd>
+#include <map>
 #include <string>
 #include <vector>
-#include <map>
-#include <iosfwd>
 
 #include <Poco/Net/HTTPResponse.h>
 

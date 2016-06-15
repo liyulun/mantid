@@ -7,12 +7,12 @@
 #include "MantidKernel/DateAndTime.h"
 #include "MantidKernel/DllConfig.h"
 #include "MantidKernel/Exception.h"
-#include "MantidKernel/Property.h"
 #include "MantidKernel/Unit.h"
 #include <cctype>
 #include <cstdlib>
 #include <map>
 #include <sstream>
+#include <string>
 #include <vector>
 
 namespace Mantid {

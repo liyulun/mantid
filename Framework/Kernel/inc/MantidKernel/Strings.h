@@ -6,11 +6,11 @@
 //----------------------------------------------------------------------
 #include "MantidKernel/DllConfig.h"
 #include <iosfwd>
+#include <iterator>
+#include <map>
 #include <set>
 #include <sstream>
 #include <vector>
-#include <map>
-#include <iterator>
 
 namespace Mantid {
 namespace Kernel {

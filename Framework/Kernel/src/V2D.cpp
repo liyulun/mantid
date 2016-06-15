@@ -2,8 +2,8 @@
 // Includes
 //-----------------------------------------------------------------------------
 #include "MantidKernel/V2D.h"
+#include "MantidKernel/DllConfig.h"
 #include "MantidKernel/V3D.h"
-#include "MantidKernel/Exception.h"
 #include <limits>
 
 namespace Mantid {

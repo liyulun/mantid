@@ -3,7 +3,7 @@
 //----------------------------------------------------------------------
 // Includes
 //----------------------------------------------------------------------
-#include "MantidKernel/IValidator.h"
+#include "MantidKernel/DllConfig.h"
 #include <stdexcept>
 #include <typeinfo>
 

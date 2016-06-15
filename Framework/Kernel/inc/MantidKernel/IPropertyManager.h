@@ -4,11 +4,11 @@
 //----------------------------------------------------------------------
 // Includes
 //----------------------------------------------------------------------
-#include "MantidKernel/PropertyWithValue.h"
 #include "MantidKernel/OptionalBool.h"
+#include "MantidKernel/PropertyWithValue.h"
 #include "MantidKernel/make_unique.h"
-#include <vector>
 #include <unordered_set>
+#include <vector>
 
 namespace Json {
 class Value;

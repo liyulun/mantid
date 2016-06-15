@@ -22,12 +22,12 @@
 // lifetime policies.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <cstdlib>
-#include <cassert>
-#include <stdexcept>
-#include <typeinfo>
-#include <string>
 #include <MantidKernel/DllConfig.h>
+#include <cassert>
+#include <cstdlib>
+#include <stdexcept>
+#include <string>
+#include <typeinfo>
 
 namespace Mantid {
 namespace Kernel {

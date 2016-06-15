@@ -23,8 +23,8 @@
   File change history is stored at: <https://github.com/mantidproject/mantid>
   Code Documentation is available at: <http://doxygen.mantidproject.org>
 */
-#include "MantidKernel/UnitLabel.h"
 #include "MantidKernel/ClassMacros.h"
+#include "MantidKernel/UnitLabel.h"
 
 namespace Mantid {
 namespace Kernel {

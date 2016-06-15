@@ -2,7 +2,7 @@
 #define MANTID_KERNEL_PROGRESSBASE_H_
 
 #include "MantidKernel/DllConfig.h"
-#include <string>
+#include "MantidKernel/ThreadScheduler.h"
 
 namespace Mantid {
 namespace Kernel {

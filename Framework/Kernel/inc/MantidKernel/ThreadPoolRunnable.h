@@ -3,9 +3,9 @@
 
 #include "MantidKernel/DllConfig.h"
 #include "MantidKernel/ProgressBase.h"
-#include "MantidKernel/ThreadScheduler.h"
 #include <Poco/Runnable.h>
 #include <Poco/Thread.h>
+#include <string>
 
 namespace Mantid {
 namespace Kernel {

@@ -3,7 +3,7 @@
 //----------------------------------------------------------------------
 #include <algorithm>
 
-#include "MantidKernel/FacilityInfo.h"
+#include "MantidKernel/CatalogInfo.h"
 #include "MantidKernel/ConfigService.h"
 #include "MantidKernel/Exception.h"
 #include "MantidKernel/Logger.h"

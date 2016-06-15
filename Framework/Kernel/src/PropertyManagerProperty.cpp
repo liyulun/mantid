@@ -1,6 +1,6 @@
 #include "MantidKernel/PropertyManagerProperty.h"
+#include "MantidKernel/DataService.h"
 #include "MantidKernel/PropertyManager.h"
-#include "MantidKernel/PropertyManagerDataService.h"
 
 namespace Mantid {
 namespace Kernel {

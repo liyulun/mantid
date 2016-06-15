@@ -34,10 +34,10 @@
 #define Foundation_FilterChannel_INCLUDED
 
 #include "MantidKernel/DllConfig.h"
-#include <Poco/Foundation.h>
 #include <Poco/Channel.h>
-#include <vector>
+#include <Poco/Foundation.h>
 #include <mutex>
+#include <vector>
 
 namespace Poco {
 

@@ -2,10 +2,10 @@
 #include <cmath>
 #include <vector>
 
-#include "MantidKernel/V3D.h"
-#include "MantidKernel/Tolerance.h"
 #include "MantidKernel/Exception.h"
 #include "MantidKernel/Quat.h"
+#include "MantidKernel/Tolerance.h"
+#include "MantidKernel/V3D.h"
 #include <boost/math/common_factor.hpp>
 
 namespace Mantid {

@@ -1,7 +1,7 @@
 #ifndef MANTID_KERNEL_ITIMESERIESPROPERTY_H_
 #define MANTID_KERNEL_ITIMESERIESPROPERTY_H_
 
-#include <vector>
+#include "MantidKernel/Exception.h"
 
 namespace Mantid {
 namespace Kernel {

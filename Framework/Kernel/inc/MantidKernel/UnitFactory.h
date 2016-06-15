@@ -25,7 +25,7 @@
 //----------------------------------------------------------------------
 #include "MantidKernel/DllConfig.h"
 #include "MantidKernel/DynamicFactory.h"
-#include "MantidKernel/SingletonHolder.h"
+#include <vector>
 
 namespace Mantid {
 namespace Kernel {

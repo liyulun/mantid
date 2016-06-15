@@ -5,14 +5,14 @@
 // Includes
 //----------------------------------------------------------------------
 #ifndef Q_MOC_RUN
-#include <boost/shared_ptr.hpp>
 #include <boost/algorithm/string.hpp>
+#include <boost/shared_ptr.hpp>
 #endif
-#include <Poco/NotificationCenter.h>
-#include <Poco/Notification.h>
-#include "MantidKernel/Logger.h"
-#include "MantidKernel/Exception.h"
 #include "MantidKernel/ConfigService.h"
+#include "MantidKernel/Exception.h"
+#include "MantidKernel/Logger.h"
+#include <Poco/Notification.h>
+#include <Poco/NotificationCenter.h>
 #include <unordered_set>
 
 #include <mutex>

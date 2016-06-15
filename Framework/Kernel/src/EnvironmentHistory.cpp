@@ -3,7 +3,7 @@
 //----------------------------------------------------------------------
 #include "MantidKernel/EnvironmentHistory.h"
 #include "MantidKernel/ConfigService.h"
-#include "MantidKernel/MantidVersion.h"
+#include "MantidKernel/DllConfig.h"
 #include <iostream>
 
 namespace Mantid {

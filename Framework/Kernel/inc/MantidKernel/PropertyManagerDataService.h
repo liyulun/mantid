@@ -1,8 +1,8 @@
 #ifndef MANTID_KERNEL_PROPERTYMANAGERDATASERVICE_
 #define MANTID_KERNEL_PROPERTYMANAGERDATASERVICE_
 
-#include "MantidKernel/DataService.h"
 #include "MantidKernel/PropertyManager.h"
+#include "MantidKernel/PropertyManagerDataService.h"
 #include "MantidKernel/SingletonHolder.h"
 
 namespace Mantid {

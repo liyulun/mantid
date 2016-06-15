@@ -1,10 +1,10 @@
 #ifndef Mantid_make_unique_h
 #define Mantid_make_unique_h
 
+#include <boost/regex.hpp>
 #include <cstddef>
 #include <memory>
 #include <type_traits>
-#include <utility>
 
 // implementation of memory::make_unique for platforms that don't currently have
 // it.

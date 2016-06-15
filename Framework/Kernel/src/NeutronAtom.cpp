@@ -4,9 +4,9 @@
 #include "MantidKernel/NeutronAtom.h"
 #include "MantidKernel/PhysicalConstants.h"
 #include <algorithm>
+#include <boost/math/special_functions/fpclassify.hpp>
 #include <sstream>
 #include <stdexcept>
-#include <boost/math/special_functions/fpclassify.hpp>
 
 namespace Mantid {
 

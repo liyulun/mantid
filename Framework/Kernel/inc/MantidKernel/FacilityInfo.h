@@ -4,16 +4,16 @@
 //----------------------------------------------------------------------
 // Includes
 //----------------------------------------------------------------------
-#include "MantidKernel/DllConfig.h"
-#include "MantidKernel/CatalogInfo.h"
 #include "MantidKernel/ComputeResourceInfo.h"
+#include "MantidKernel/DllConfig.h"
+#include "MantidKernel/FacilityInfo.h"
 #include "MantidKernel/InstrumentInfo.h"
-#include "MantidKernel/RemoteJobManager.h"
+#include <string>
 #ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
 #endif
-#include <vector>
 #include <string>
+#include <vector>
 
 //----------------------------------------------------------------------
 // Forward declarations
